@@ -135,6 +135,17 @@ class Coinbase
     }
 
     /**
+     * Resolves a charge.
+     *
+     * @param  array  $params
+     * @return array
+     */
+    public function resolveCharge($chargeId, array $params = [])
+    {
+        return $this->makeRequest('post', "charges/{$chargeId}", $params);
+    }
+
+    /**
      * Lists all checkouts.
      *
      * @param null|array $query
